@@ -1,12 +1,10 @@
 package main
 
-type Runtime interface{
-	Run(spec *Spec) error
-}
+import (
+	"fmt"
+)
 
-type FakeRuntime struct{}
-
-type Agent struct{
+type Agent struct {
 	runtime Runtime
 }
 
@@ -17,6 +15,10 @@ func (a *Agent) Schedule(spec *Spec) error {
 	return err
 }
 
-func (r *FakeRuntime) Run(spec *Spec) error {
-	return nil
+func main() {
+	runtime := NewContainerDRuntime()
+	err := runtime.Run(nil)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
