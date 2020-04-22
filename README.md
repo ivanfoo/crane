@@ -2,4 +2,4 @@
 
 # crane
 
-Simple container orchestrator for learning purposes. It is not intended to be used in a production environemnt in any case.
+Simple container orchestrator for learning purposes. It is not intended to be used in a production environment in any case.
